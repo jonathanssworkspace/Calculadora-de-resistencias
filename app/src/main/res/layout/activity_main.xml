@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/tool_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/BandsInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Banda 1"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.165"
+        android:textSize="40sp"
+        android:textColor="@color/negro"
+        android:fontFamily="serif-monospace"/>
+
+    <RadioGroup
+        android:id="@+id/bands"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.162">
+
+        <RadioButton
+            android:id="@+id/fourBands"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 Bandas"
+            tools:layout_editor_absoluteX="73dp"
+            tools:layout_editor_absoluteY="427dp" />
+
+        <RadioButton
+            android:id="@+id/fiveBands"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="5 Bandas"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="432dp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/Res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bands" />
+
+    <FrameLayout
+        android:id="@+id/resContainer"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@id/bands"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="8dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/imgResBase"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/resistencia"
+            android:scaleType="fitCenter" />
+
+        <View
+            android:id="@+id/band1Overlay"
+            android:layout_width="10dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="60dp"
+            android:background="@color/transparent"
+            />
+
+        <View
+            android:id="@+id/band2Overlay"
+            android:layout_width="10dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="70dp"
+            android:background="@color/transparent" />
+
+        <View
+            android:id="@+id/band3Overlay"
+            android:layout_width="10dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="120dp"
+            android:background="@color/transparent" />
+
+        <View
+            android:id="@+id/band4Overlay"
+            android:layout_width="10dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="130dp"
+            android:background="@color/transparent" />
+    </FrameLayout>
+
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/banda1Group"
+        android:layout_width="178dp"
+        android:layout_height="237dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bands"
+        app:layout_constraintVertical_bias="0.757"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipNegro"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/negro" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCafe"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/cafe" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipRojo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/rojo" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipNaranja"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/naranja" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAmarillo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/amarillo" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipVerde"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/verde" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAzul"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/azul" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMorado"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/morado" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipGris"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/gris" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipBlanco"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/blanco" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipReturnMain"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipIcon="@drawable/flecha"
+            app:chipIconSize="32dp"
+            app:chipIconVisible="true"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/transparent"
+            app:chipStrokeWidth="2dp"
+            android:text=""/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/banda2Group"
+        android:layout_width="178dp"
+        android:layout_height="237dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bands"
+        app:layout_constraintVertical_bias="0.753"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipNegro2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/negro" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCafe2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/cafe" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipRojo2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/rojo" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipNaranja2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/naranja" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAmarillo2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/amarillo" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipVerde2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/verde" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAzul2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/azul" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMorado2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/morado" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipGris2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/gris" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipBlanco2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/blanco" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipReturn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipIcon="@drawable/flecha"
+            app:chipIconSize="32dp"
+            app:chipIconVisible="true"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/transparent"
+            app:chipStrokeWidth="2dp"
+            android:text=""/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/banda3Group"
+        android:layout_width="180dp"
+        android:layout_height="281dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bands"
+        app:layout_constraintVertical_bias="0.821"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipNegro3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/negro" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCafe3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/cafe" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipRojo3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/rojo" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipNaranja3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/naranja" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAmarillo3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/amarillo" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipVerde3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/verde" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAzul3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/azul" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMorado3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/morado" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipGris3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/gris" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipBlanco3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/blanco" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipOro"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            android:text="Oro"
+            android:textSize="10sp"
+            app:chipBackgroundColor="@color/oro"
+            android:textColor="@color/negro"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipPlata"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            android:text="Plata"
+            android:textSize="10sp"
+            app:chipBackgroundColor="@color/plateado" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipReturn2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            android:text=""
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/transparent"
+            app:chipIcon="@drawable/flecha"
+            app:chipIconSize="32dp"
+            app:chipIconVisible="true"
+            app:chipStrokeWidth="2dp" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/banda4Group"
+        android:layout_width="178dp"
+        android:layout_height="237dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bands"
+        app:layout_constraintVertical_bias="0.753"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCafe4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/cafe" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipRojo4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/rojo" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipOro2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            android:text="Oro"
+            android:textSize="10sp"
+            app:chipBackgroundColor="@color/oro"
+            android:textColor="@color/negro"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipPlata2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            android:text="Plata"
+            android:textSize="10sp"
+            app:chipBackgroundColor="@color/plateado" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipReturn3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipIcon="@drawable/flecha"
+            app:chipIconSize="32dp"
+            app:chipIconVisible="true"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/transparent"
+            app:chipStrokeWidth="2dp"
+            android:text=""/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/banda5Group"
+        android:layout_width="178dp"
+        android:layout_height="237dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bands"
+        app:layout_constraintVertical_bias="0.753"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipNegro5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/negro" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCafe5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/cafe" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipRojo5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/rojo" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipNaranja5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/naranja" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAmarillo5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/amarillo" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipVerde5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/verde" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAzul5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/azul" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMorado5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/morado" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipGris5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/gris" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipBlanco5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/blanco" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipReturn4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:checkable="true"
+            app:chipIcon="@drawable/flecha"
+            app:chipIconSize="32dp"
+            app:chipIconVisible="true"
+            app:checkedIconVisible="false"
+            app:chipBackgroundColor="@color/transparent"
+            app:chipStrokeWidth="2dp"
+            android:text=""/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/Inicio"
+        android:layout_width="65dp"
+        android:layout_height="79dp"
+        android:checkable="false"
+        android:clickable="true"
+        android:text=""
+        android:visibility="gone"
+        app:checkedIconVisible="false"
+        app:chipBackgroundColor="@color/transparent"
+        app:chipIcon="@drawable/inicio"
+        app:chipIconSize="50dp"
+        app:chipIconVisible="true"
+        app:chipStrokeWidth="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.641" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
