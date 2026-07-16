@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/fondo">
 
     <include
         android:id="@+id/include"
@@ -29,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.165"
         android:textSize="40sp"
-        android:textColor="@color/negro"
+        android:textColor="@color/texto"
         android:fontFamily="serif-monospace"/>
 
     <RadioGroup
@@ -75,7 +76,8 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bands" />
+        app:layout_constraintTop_toBottomOf="@id/bands"
+        android:textColor="@color/texto"/>
 
     <FrameLayout
         android:id="@+id/resContainer"

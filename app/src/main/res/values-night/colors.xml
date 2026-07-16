@@ -12,8 +12,8 @@
     <color name="gris">#545151</color>
     <color name="oro">#FFFF00</color>
     <color name="plateado">#8A8686</color>
-    <color name="transparent">#008A8686</color>
+    <color name="transparent">#6B6A6A</color>
     <color name="azulVer">#00B8D4</color>
-    <color name="fondo">#FFFFFF</color>
-    <color name="texto">#000000</color>
+    <color name="fondo">#6B6A6A</color>
+    <color name="texto">#B8AFAF</color>
 </resources>

@@ -14,12 +14,12 @@
             android:src="@drawable/resistencia"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="Resistencia"
+            android:layout_width="174dp"
+            android:layout_height="53dp"
             android:layout_marginTop="35dp"
-            android:textSize="20sp"
-            />
+            android:text="Resistencias"
+            android:textSize="30sp"
+            android:textColor="@color/texto"/>
 
     </LinearLayout>
 </androidx.appcompat.widget.Toolbar>
